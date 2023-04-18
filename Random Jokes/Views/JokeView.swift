@@ -10,7 +10,7 @@ import Blackbird
 struct JokeView: View {
     
     @State var punchlineOpacity = 0.0
-    
+    @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
     @State var currentJoke: Joke?
     
     var body: some View {
@@ -61,6 +61,24 @@ struct JokeView: View {
                 })
                 .disabled(punchlineOpacity == 0.0 ? true : false)
                 .buttonStyle(.borderedProminent)
+                
+                Button(action: {
+                    Task {
+                        if let currentJoke = currentJoke {
+                            try await db!.transaction { core in
+                                try core.query("INSERT INTO Joke (id, type, setup, punchline) VALUES (?,?,?,?)",
+                                               currentJoke.id,
+                                               currentJoke.type,
+                                               currentJoke.setup,
+                                               currentJoke.punchline
+                                )
+                            }
+                        }
+                    }
+                }, label: {
+                    Text("Save for later")
+                })
+                .buttonStyle(.borderedProminent)
             }
             .navigationTitle("Random Jokes")
         }
@@ -73,5 +91,6 @@ struct JokeView: View {
 struct JokeView_Previews: PreviewProvider {
     static var previews: some View {
         JokeView()
+            .environment(\.blackbirdDatabase, AppDatabase.instance)
     }
 }
