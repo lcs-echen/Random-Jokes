@@ -12,6 +12,7 @@ struct JokeView: View {
     @State var punchlineOpacity = 0.0
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
     @State var currentJoke: Joke?
+    @State var savedToDatabase = false
     
     var body: some View {
         NavigationView{
@@ -28,6 +29,7 @@ struct JokeView: View {
                         withAnimation(.easeIn(duration: 1.0)){
                             punchlineOpacity = 1.0
                         }
+                       
                     }, label: {Image(systemName: "arrow.down.circle.fill")
                             .resizable()
                             .scaledToFit()
@@ -54,6 +56,7 @@ struct JokeView: View {
                         withAnimation {
                             currentJoke = nil
                         }
+                        savedToDatabase = false
                         currentJoke = await NetworkService.fetch()
                     }
                 }, label: {
@@ -72,6 +75,7 @@ struct JokeView: View {
                                                currentJoke.setup,
                                                currentJoke.punchline
                                 )
+                                savedToDatabse = true
                             }
                         }
                     }
@@ -81,6 +85,7 @@ struct JokeView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.green)
                 .disabled(punchlineOpacity == 0.0 ? true : false)
+                .disabled(savedToData = true ? true : false)
             }
             .navigationTitle("Random Jokes")
         }
