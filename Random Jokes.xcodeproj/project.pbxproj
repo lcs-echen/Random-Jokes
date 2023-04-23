@@ -14,7 +14,6 @@
 		81671DC829E9D4C000F5FB5B /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81671DC729E9D4C000F5FB5B /* Joke.swift */; };
 		81671DCB29E9D5C200F5FB5B /* NetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81671DCA29E9D5C200F5FB5B /* NetWorkService.swift */; };
 		CA3C6BF229EED13A003567B4 /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = CA3C6BF129EED13A003567B4 /* Blackbird */; };
-		CA3C6BF429EED20F003567B4 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CA3C6BF329EED20F003567B4 /* db.sqlite */; };
 		CA3C6BF629EED2C4003567B4 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C6BF529EED2C4003567B4 /* AppDatabase.swift */; };
 		CA3C6BF929EED3DD003567B4 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C6BF829EED3DD003567B4 /* FavouritesView.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +26,6 @@
 		81671DC329E9D1B500F5FB5B /* JokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeView.swift; sourceTree = "<group>"; };
 		81671DC729E9D4C000F5FB5B /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		81671DCA29E9D5C200F5FB5B /* NetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkService.swift; sourceTree = "<group>"; };
-		CA3C6BF329EED20F003567B4 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = SOURCE_ROOT; };
 		CA3C6BF529EED2C4003567B4 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		CA3C6BF829EED3DD003567B4 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +92,6 @@
 		81671DC629E9D4AF00F5FB5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CA3C6BF329EED20F003567B4 /* db.sqlite */,
 				81671DC729E9D4C000F5FB5B /* Joke.swift */,
 			);
 			path = Model;
@@ -181,7 +178,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				81671DBD29E9D0AE00F5FB5B /* Preview Assets.xcassets in Resources */,
-				CA3C6BF429EED20F003567B4 /* db.sqlite in Resources */,
 				81671DBA29E9D0AE00F5FB5B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

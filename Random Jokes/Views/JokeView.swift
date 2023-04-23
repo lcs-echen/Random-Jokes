@@ -24,6 +24,7 @@ struct JokeView: View {
                     Text(currentJoke.setup)
                         .font(.title)
                         .multilineTextAlignment(.center)
+                        .padding()
                     
                     Button(action: {
                         withAnimation(.easeIn(duration: 1.0)){
@@ -41,6 +42,7 @@ struct JokeView: View {
                         .font(.title)
                         .multilineTextAlignment(.center)
                         .opacity(punchlineOpacity)
+                        .padding()
                 }else{
                     ProgressView()
                 }
@@ -75,7 +77,7 @@ struct JokeView: View {
                                                currentJoke.setup,
                                                currentJoke.punchline
                                 )
-                                savedToDatabse = true
+                                savedToDatabase = true
                             }
                         }
                     }
@@ -85,9 +87,9 @@ struct JokeView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.green)
                 .disabled(punchlineOpacity == 0.0 ? true : false)
-                .disabled(savedToData = true ? true : false)
+                .disabled(savedToDatabase == true ? true : false)
             }
-            .navigationTitle("Random Jokes")
+            .navigationTitle("Fresh Jokes")
         }
         .task {
             if currentJoke == nil {
